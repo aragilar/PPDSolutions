@@ -27,6 +27,7 @@ $(OUTPUT_DIR)/initial_diverge.svg: $(OUTPUT_DIR)
 # ds-plot --show 2024-01-09T07:52:19.526761+00:00ForkPoolWorker-15.hdf5 final --stop 5 --portrait --hide-roots --title '' --no-show-version --with-slow
 #
 # overall solution
+# sonic_library/new_miller_runs/complete_csvs/run_3/stepped_runs/2024-01-09T07:52:19.526761+00:00ForkPoolWorker-15.hdf5
 # ds-plot --show 2024-01-09T07:52:19.526761+00:00ForkPoolWorker-15.hdf5 final --stop 55 --portrait --hide-roots --title '' --no-show-version --with-alfven
 #
 # sonic and post sonic
