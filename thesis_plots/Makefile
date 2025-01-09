@@ -76,3 +76,10 @@ $(OUT_DIR)/alfven_post_alfven_example_solution_plot.$(EXT): $(OUT_DIR)
 # ds-plot --show 2024-01-09T07:52:19.526761+00:00ForkPoolWorker-15.hdf5 final --portrait --hide-roots --title '' --no-show-version --start 40 --stop 57.5
 $(OUT_DIR)/post_alfven_before_mess_example_solution_plot.$(EXT): $(OUT_DIR)
 	ds-plot $(EXAMPLE_PLOT_FILE_SOLN) $(COMMON_PLOT_ARGS) $(FULL_PLOT_SIZE) $(DS_PLOT_COMMON_ARGS) --filename $@ --start 40 --stop 57.5
+
+# ds-flow-plot --show sonic_library/miller_output/miller_out_2023-02-24T07\:59\:20.194017+00\:00ForkPoolWorker-30.hdf5 final --v-step-scaling 5e-7
+# ds-flow-plot --show sonic_library/miller_output/miller_out_2023-02-24T08\:04\:39.105474+00\:00ForkPoolWorker-35.hdf5 final --v-max 1000000
+# ds-flow-plot --show sonic_library/miller_output/miller_out_2023-02-24T08\:08\:24.915728+00\:00ForkPoolWorker-30.hdf5 final
+# ds-flow-plot --show sonic_library/miller_output/miller_out_2023-02-24T08\:08\:42.497008+00\:00ForkPoolWorker-23.hdf5 final
+# ds-flow-plot --show sonic_library/miller_output/miller_out_2023-02-24T08\:13\:18.040802+00\:00ForkPoolWorker-36.hdf5 final
+# ds-flow-plot --show sonic_library/miller_output/miller_out_2023-02-24T08\:14\:28.342868+00\:00ForkPoolWorker-32.hdf5 final --v-max 1000000 --B-max 100000000
