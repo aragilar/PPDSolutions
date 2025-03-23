@@ -32,27 +32,27 @@ $(OUT_DIR):
 	mkdir -p $(OUT_DIR)
 
 $(OUT_DIR)/initial_diverge_plot.$(EXT): $(OUT_DIR)
-	ds-diverge-plot $(DIVERGE_PLOT_FILE) $(COMMON_PLOT_ARGS) $(HALF_PLOT_SIZE) --filename $@ --solutions 0-4 --stop 5
+	ds-diverge-plot $(DIVERGE_PLOT_FILE) $(COMMON_PLOT_ARGS) $(FULL_PLOT_SIZE) --filename $@ --solutions 0-4 --stop 5
 
 # initial convergence
 #ds-diverge-plot --show diverge/diverge-2024-07-29T13:47:38.962910+10:00.hdf5 --no-show-version --title='' --solutions 3-10 --stop 3
 $(OUT_DIR)/initial_convergence_plot.$(EXT): $(OUT_DIR)
-	ds-diverge-plot $(DIVERGE_PLOT_FILE) $(COMMON_PLOT_ARGS) $(HALF_PLOT_SIZE) --filename $@ --solutions 3-10 --stop 3
+	ds-diverge-plot $(DIVERGE_PLOT_FILE) $(COMMON_PLOT_ARGS) $(FULL_PLOT_SIZE) --filename $@ --solutions 3-10 --stop 3
 
 # main types now visible
 #ds-diverge-plot --show diverge/diverge-2024-07-29T13:47:38.962910+10:00.hdf5 --no-show-version --title='' --solutions 10-20 --stop 3 --start 1.5
 $(OUT_DIR)/main_types_visible_plot.$(EXT): $(OUT_DIR)
-	ds-diverge-plot $(DIVERGE_PLOT_FILE) $(COMMON_PLOT_ARGS) $(HALF_PLOT_SIZE) --filename $@ --solutions 10-20 --stop 3 --start 1.5
+	ds-diverge-plot $(DIVERGE_PLOT_FILE) $(COMMON_PLOT_ARGS) $(FULL_PLOT_SIZE) --filename $@ --solutions 10-20 --stop 3 --start 1.5
 
 # zoom in on the sonic point
 # ds-diverge-plot --show diverge/diverge-2024-07-29T13:47:38.962910+10:00.hdf5 --no-show-version --title='' --solutions 20-30 --stop 2.1 --start 2.08
 $(OUT_DIR)/zoom_in_sonic_point_diverge_plot.$(EXT): $(OUT_DIR)
-	ds-diverge-plot $(DIVERGE_PLOT_FILE) $(COMMON_PLOT_ARGS) $(HALF_PLOT_SIZE) --filename $@ --solutions 20-30 --stop 2.1 --start 2.08
+	ds-diverge-plot $(DIVERGE_PLOT_FILE) $(COMMON_PLOT_ARGS) $(FULL_PLOT_SIZE) --filename $@ --solutions 20-30 --stop 2.1 --start 2.08
 
 # zoom in on the sonic point no jumps
 # ds-diverge-plot --show diverge/diverge-2024-07-29T13:47:38.962910+10:00.hdf5 --no-show-version --title='' --solutions 21,22,24,25,28,30 --stop 2.1 --start 2.08
 $(OUT_DIR)/zoom_in_sonic_point_diverge_no_jumps_plot.$(EXT): $(OUT_DIR)
-	ds-diverge-plot $(DIVERGE_PLOT_FILE) $(COMMON_PLOT_ARGS) $(HALF_PLOT_SIZE) --filename $@ --solutions 21,22,24,25,28,30 --stop 2.1 --start 2.08
+	ds-diverge-plot $(DIVERGE_PLOT_FILE) $(COMMON_PLOT_ARGS) $(FULL_PLOT_SIZE) --filename $@ --solutions 21,22,24,25,28,30 --stop 2.1 --start 2.08
 
 # overall solution
 # ds-plot --show 2024-01-09T07:52:19.526761+00:00ForkPoolWorker-15.hdf5 final --portrait --hide-roots --title '' --no-show-version --with-alfven --stop 55
