@@ -114,7 +114,7 @@ $(OUT_DIR)/flow_plot_bounce.$(EXT): $(OUT_DIR)
 #
 
 $(OUT_DIR)/ambi_full_plot.$(EXT): $(OUT_DIR)
-	ds-plot $(AMBI_PLOT_SOLN) $(COMMON_PLOT_ARGS) $(FULL_PLOT_SIZE) $(DS_PLOT_COMMON_ARGS) --filename $@ --stop 40.5
+	ds-plot $(AMBI_PLOT_SOLN) $(COMMON_PLOT_ARGS) $(FULL_PLOT_SIZE) $(DS_PLOT_COMMON_ARGS) --filename $@ --stop 40.5 --with-alfven
 
 $(OUT_DIR)/ohm_full_plot.$(EXT): $(OUT_DIR)
-	ds-plot $(OHM_PLOT_SOLN) $(COMMON_PLOT_ARGS) $(FULL_PLOT_SIZE) $(DS_PLOT_COMMON_ARGS) --filename $@ --stop 60
+	ds-plot $(OHM_PLOT_SOLN) $(COMMON_PLOT_ARGS) $(FULL_PLOT_SIZE) $(DS_PLOT_COMMON_ARGS) --filename $@ --stop 60 --with-alfven
