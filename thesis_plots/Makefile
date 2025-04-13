@@ -15,7 +15,7 @@ FLOW_PLOT_BASIC_FILE_SOLN=../sonic_library/new_miller_runs/complete_csvs/run_6/s
 FLOW_PLOT_BOUNCE_FILE_SOLN=../sonic_library/miller_output/miller_out_2023-02-24T08\:04\:39.105474+00\:00ForkPoolWorker-35.hdf5 final
 
 
-TARGETS=$(OUT_DIR)/initial_diverge_plot.$(EXT) $(OUT_DIR)/initial_convergence_plot.$(EXT) $(OUT_DIR)/main_types_visible_plot.$(EXT) $(OUT_DIR)/zoom_in_sonic_point_diverge_plot.$(EXT) $(OUT_DIR)/zoom_in_sonic_point_diverge_no_jumps_plot.$(EXT) $(OUT_DIR)/post_alfven_before_mess_example_solution_plot.$(EXT) $(OUT_DIR)/alfven_post_alfven_example_solution_plot.$(EXT) $(OUT_DIR)/sonic_post_sonic_example_solution_plot.$(EXT) $(OUT_DIR)/slow_sonic_example_solution_plot.$(EXT) $(OUT_DIR)/overall_example_solution_plot.$(EXT) $(OUT_DIR)/flow_plot_basic.$(EXT) $(OUT_DIR)/flow_plot_bounce.$(EXT)
+TARGETS=$(OUT_DIR)/initial_diverge_plot.$(EXT) $(OUT_DIR)/initial_convergence_plot.$(EXT) $(OUT_DIR)/main_types_visible_plot.$(EXT) $(OUT_DIR)/zoom_in_sonic_point_diverge_plot.$(EXT) $(OUT_DIR)/zoom_in_sonic_point_diverge_no_jumps_plot.$(EXT) $(OUT_DIR)/post_alfven_before_mess_example_solution_plot.$(EXT) $(OUT_DIR)/alfven_post_alfven_example_solution_plot.$(EXT) $(OUT_DIR)/sonic_post_sonic_example_solution_plot.$(EXT) $(OUT_DIR)/slow_sonic_example_solution_plot.$(EXT) $(OUT_DIR)/overall_example_solution_plot.$(EXT) $(OUT_DIR)/flow_plot_basic.$(EXT) $(OUT_DIR)/flow_plot_bounce.$(EXT) $(OUT_DIR)/oscillate_plot_example.$(EXT) $(OUT_DIR)/diverge_plot_example.$(EXT) $(OUT_DIR)/turn_down_plot_example.$(EXT) $(OUT_DIR)/jump_and_diverge_plot_example.$(EXT) $(OUT_DIR)/diverge_jump_down_plot_example.$(EXT)
 
 
 .PHONY: all clean copy-to-thesis
@@ -30,6 +30,21 @@ clean:
 
 $(OUT_DIR):
 	mkdir -p $(OUT_DIR)
+
+$(OUT_DIR)/oscillate_plot_example.$(EXT): $(OUT_DIR)
+	ds-plot $(DIVERGE_PLOT_FILE) $(COMMON_PLOT_ARGS) $(FULL_PLOT_SIZE) $(DS_PLOT_COMMON_ARGS) --filename $@ 3 --stop 5
+
+$(OUT_DIR)/diverge_plot_example.$(EXT): $(OUT_DIR)
+	ds-plot $(DIVERGE_PLOT_FILE) $(COMMON_PLOT_ARGS) $(FULL_PLOT_SIZE) $(DS_PLOT_COMMON_ARGS) --filename $@ 4 --stop 5
+
+$(OUT_DIR)/diverge_jump_down_plot_example.$(EXT): $(OUT_DIR)
+	ds-plot $(DIVERGE_PLOT_FILE) $(COMMON_PLOT_ARGS) $(FULL_PLOT_SIZE) $(DS_PLOT_COMMON_ARGS) --filename $@ 10 --stop 5
+
+$(OUT_DIR)/turn_down_plot_example.$(EXT): $(OUT_DIR)
+	ds-plot $(DIVERGE_PLOT_FILE) $(COMMON_PLOT_ARGS) $(FULL_PLOT_SIZE) $(DS_PLOT_COMMON_ARGS) --filename $@ 18 --stop 5
+
+$(OUT_DIR)/jump_and_diverge_plot_example.$(EXT): $(OUT_DIR)
+	ds-plot $(DIVERGE_PLOT_FILE) $(COMMON_PLOT_ARGS) $(FULL_PLOT_SIZE) $(DS_PLOT_COMMON_ARGS) --filename $@ 20 --stop 5
 
 $(OUT_DIR)/initial_diverge_plot.$(EXT): $(OUT_DIR)
 	ds-diverge-plot $(DIVERGE_PLOT_FILE) $(COMMON_PLOT_ARGS) $(FULL_PLOT_SIZE) --filename $@ --solutions 0-4 --stop 5
