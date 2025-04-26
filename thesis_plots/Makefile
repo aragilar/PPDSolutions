@@ -17,7 +17,7 @@ OHM_PLOT_SOLN=../double_mod_v_r/ohm-mod_v_r-2019-01-10T16:55:25.544005+11:00.hdf
 AMBI_PLOT_SOLN=../ambi_ratios/good_solns/ambi-mod_v_r-2019-02-20T00:35:50.812431+11:00.hdf5 final
 
 
-TARGETS=$(OUT_DIR)/initial_diverge_plot.$(EXT) $(OUT_DIR)/initial_convergence_plot.$(EXT) $(OUT_DIR)/main_types_visible_plot.$(EXT) $(OUT_DIR)/zoom_in_sonic_point_diverge_plot.$(EXT) $(OUT_DIR)/zoom_in_sonic_point_diverge_no_jumps_plot.$(EXT) $(OUT_DIR)/post_alfven_before_mess_example_solution_plot.$(EXT) $(OUT_DIR)/alfven_post_alfven_example_solution_plot.$(EXT) $(OUT_DIR)/sonic_post_sonic_example_solution_plot.$(EXT) $(OUT_DIR)/slow_sonic_example_solution_plot.$(EXT) $(OUT_DIR)/overall_example_solution_plot.$(EXT) $(OUT_DIR)/flow_plot_basic.$(EXT) $(OUT_DIR)/flow_plot_bounce.$(EXT) $(OUT_DIR)/oscillate_plot_example.$(EXT) $(OUT_DIR)/diverge_plot_example.$(EXT) $(OUT_DIR)/turn_down_plot_example.$(EXT) $(OUT_DIR)/jump_and_diverge_plot_example.$(EXT) $(OUT_DIR)/diverge_jump_down_plot_example.$(EXT) $(OUT_DIR)/ambi_full_plot.$(EXT) $(OUT_DIR)/ohm_full_plot.$(EXT)
+TARGETS=$(OUT_DIR)/initial_diverge_plot.$(EXT) $(OUT_DIR)/initial_convergence_plot.$(EXT) $(OUT_DIR)/main_types_visible_plot.$(EXT) $(OUT_DIR)/zoom_in_sonic_point_diverge_plot.$(EXT) $(OUT_DIR)/zoom_in_sonic_point_diverge_no_jumps_plot.$(EXT) $(OUT_DIR)/post_alfven_before_mess_example_solution_plot.$(EXT) $(OUT_DIR)/alfven_post_alfven_example_solution_plot.$(EXT) $(OUT_DIR)/sonic_post_sonic_example_solution_plot.$(EXT) $(OUT_DIR)/slow_sonic_example_solution_plot.$(EXT) $(OUT_DIR)/overall_example_solution_plot.$(EXT) $(OUT_DIR)/flow_plot_basic.$(EXT) $(OUT_DIR)/flow_plot_bounce.$(EXT) $(OUT_DIR)/oscillate_plot_example.$(EXT) $(OUT_DIR)/diverge_plot_example.$(EXT) $(OUT_DIR)/turn_down_plot_example.$(EXT) $(OUT_DIR)/jump_and_diverge_plot_example.$(EXT) $(OUT_DIR)/diverge_jump_down_plot_example.$(EXT) $(OUT_DIR)/ambi_full_plot.$(EXT) $(OUT_DIR)/ohm_full_plot.$(EXT) $(OUT_DIR)/flow_plot_ohm.$(EXT) $(OUT_DIR)/flow_plot_ambi.$(EXT)
 
 
 .PHONY: all clean copy-to-thesis
@@ -112,6 +112,14 @@ $(OUT_DIR)/flow_plot_bounce.$(EXT): $(OUT_DIR)
 #
 #
 #
+
+# ds-flow-plot --show double_mod_v_r/ohm-mod_v_r-2019-01-10T16:55:25.544005+11:00.hdf5 final --v-max 10000 --v-step-scaling 1e-3
+$(OUT_DIR)/flow_plot_ohm.$(EXT): $(OUT_DIR)
+	ds-flow-plot $(OHM_PLOT_SOLN) $(COMMON_PLOT_ARGS) $(FULL_PLOT_SIZE) --filename $@ --v-max 10000 --v-step-scaling 1e-3
+
+# ds-flow-plot --show ambi_ratios/good_solns/ambi-mod_v_r-2019-02-20T00:35:50.812431+11:00.hdf5 final --v-max 10000 --v-step-scaling 1e-3
+$(OUT_DIR)/flow_plot_ambi.$(EXT): $(OUT_DIR)
+	ds-flow-plot $(AMBI_PLOT_SOLN) $(COMMON_PLOT_ARGS) $(FULL_PLOT_SIZE) --filename $@ --v-max 10000 --v-step-scaling 1e-3
 
 $(OUT_DIR)/ambi_full_plot.$(EXT): $(OUT_DIR)
 	ds-plot $(AMBI_PLOT_SOLN) $(COMMON_PLOT_ARGS) $(FULL_PLOT_SIZE) $(DS_PLOT_COMMON_ARGS) --filename $@ --stop 40.5 --with-alfven
