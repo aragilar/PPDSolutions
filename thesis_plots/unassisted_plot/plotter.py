@@ -32,7 +32,7 @@ def main():
     ax.scatter(v_r_unassist, γ_unassist, label="Unassisted")
     ax.legend()
     ax.set_xlabel("$v_{r}$")
-    ax.set_ylabel("$γ$")
+    ax.set_ylabel("$\\gamma$")
     fig.savefig(args.save_file)
 
 if __name__ == '__main__':

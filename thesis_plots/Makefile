@@ -79,7 +79,7 @@ $(OUT_DIR)/overall_example_solution_plot.$(EXT): $(OUT_DIR)
 # slow and sonic
 # ds-plot --show 2024-01-09T07:52:19.526761+00:00ForkPoolWorker-15.hdf5 final --portrait --hide-roots --title '' --no-show-version --with-slow --stop 5
 $(OUT_DIR)/slow_sonic_example_solution_plot.$(EXT): $(OUT_DIR)
-	ds-plot $(EXAMPLE_PLOT_FILE_SOLN) $(COMMON_PLOT_ARGS) $(FULL_PLOT_SIZE) $(DS_PLOT_COMMON_ARGS) --filename $@ --stop 5 --with-slow
+	ds-plot $(EXAMPLE_PLOT_FILE_SOLN) $(COMMON_PLOT_ARGS) $(FULL_PLOT_SIZE) $(DS_PLOT_COMMON_ARGS) --filename $@ --stop 5 --with-slow --with-sonic
 #
 # sonic and post sonic
 # ds-plot --show 2024-01-09T07:52:19.526761+00:00ForkPoolWorker-15.hdf5 final --portrait --hide-roots --title '' --no-show-version --stop 10
