@@ -98,11 +98,12 @@ $(OUT_DIR)/post_alfven_before_mess_example_solution_plot.$(EXT): $(OUT_DIR)
 
 # ds-flow-plot --show sonic_library/new_miller_runs/complete_csvs/run_6/stepped_runs/2024-01-23T11\:17\:30.323177+11\:00ForkPoolWorker-1.hdf5 11
 $(OUT_DIR)/flow_plot_basic.$(EXT): $(OUT_DIR)
-	ds-flow-plot $(FLOW_PLOT_BASIC_FILE_SOLN) $(COMMON_PLOT_ARGS) $(FULL_PLOT_SIZE) --filename $@
+	ds-flow-plot $(FLOW_PLOT_BASIC_FILE_SOLN) $(COMMON_PLOT_ARGS) $(FULL_PLOT_SIZE) --filename $@ --v-max 10000000 --B-max 100000
+	#ds-flow-plot $(FLOW_PLOT_BASIC_FILE_SOLN) $(COMMON_PLOT_ARGS) $(FULL_PLOT_SIZE) --filename $@ --v-max 10000000
 
 # ds-flow-plot --show sonic_library/miller_output/miller_out_2023-02-24T08\:04\:39.105474+00\:00ForkPoolWorker-35.hdf5 final --v-max 1000000
 $(OUT_DIR)/flow_plot_bounce.$(EXT): $(OUT_DIR)
-	ds-flow-plot $(FLOW_PLOT_BOUNCE_FILE_SOLN) $(COMMON_PLOT_ARGS) $(FULL_PLOT_SIZE) --filename $@ --v-max 1000000
+	ds-flow-plot $(FLOW_PLOT_BOUNCE_FILE_SOLN) $(COMMON_PLOT_ARGS) $(FULL_PLOT_SIZE) --filename $@ --v-max 100000000
 
 # ds-flow-plot --show sonic_library/miller_output/miller_out_2023-02-24T07\:59\:20.194017+00\:00ForkPoolWorker-30.hdf5 final --v-step-scaling 5e-7
 # ds-flow-plot --show sonic_library/miller_output/miller_out_2023-02-24T08\:08\:24.915728+00\:00ForkPoolWorker-30.hdf5 final
