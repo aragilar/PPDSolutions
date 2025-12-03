@@ -1,0 +1,5 @@
+In `fixed_stats` ran
+`mlr --icsv cut -f filename alfven_monotonic.csv | sed 's/filename=//' | sort | uniq > ../stats_with_bp/alfven_files`
+
+In here ran
+`mlr --csv filter -e 'boolean(tolower($v_θ_starts_monotonic)) && $max_alfven_mach > 1' stats.csv > alfven_monotonic.csv`
